@@ -6,7 +6,6 @@ import base64
 st.set_page_config(page_title="이미지 분석 AI", page_icon="🖼️")
 
 # ── API 설정 ──────────────────────────────────────────────
-api_key = "여러분키"
 client = Groq(api_key="GROQ_API_KEY")
 
 # ── 이미지 Vision 모델 고정 ───────────────────────────────
