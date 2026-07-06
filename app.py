@@ -1,6 +1,8 @@
 import streamlit as st
 from groq import Groq
 import base64
+import os
+
 
 # ── 페이지 설정 ───────────────────────────────────────────
 st.set_page_config(page_title="이미지 분석 AI", page_icon="🖼️")
