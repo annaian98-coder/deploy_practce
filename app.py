@@ -1,14 +1,13 @@
 import streamlit as st
 from groq import Groq
 import base64
-import os
 
 # ── 페이지 설정 ───────────────────────────────────────────
 st.set_page_config(page_title="이미지 분석 AI", page_icon="🖼️")
 
 # ── API 설정 ──────────────────────────────────────────────
-
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+api_key = "여러분키"
+client = Groq(api_key="GROQ_API_KEY")
 
 # ── 이미지 Vision 모델 고정 ───────────────────────────────
 # 이미지를 볼 수 있는 모델은 따로 있어요
@@ -40,7 +39,7 @@ with tab_url:
         placeholder=""
     )
     if image_url:
-        st.image(image_url, caption="입력한 이미지", width=None)
+        st.image(image_url, caption="입력한 이미지", use_column_width=True)
 
 with tab_file:
     uploaded_file = st.file_uploader(
@@ -48,7 +47,7 @@ with tab_file:
         type=["jpg", "jpeg", "png", "webp", "gif"]
     )
     if uploaded_file:
-        st.image(uploaded_file, caption="업로드한 이미지", width=None)
+        st.image(uploaded_file, caption="업로드한 이미지", use_column_width=True)
 
 st.divider()
 
